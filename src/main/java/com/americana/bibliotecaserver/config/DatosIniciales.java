@@ -19,8 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Component
-@Profile("h2")
-public class DatosInicialesH2 implements ApplicationRunner {
+@Profile({"h2", "postgres"})
+public class DatosIniciales implements ApplicationRunner {
 
     private final AutorRepository autorRepository;
     private final EditorialRepository editorialRepository;
@@ -28,7 +28,7 @@ public class DatosInicialesH2 implements ApplicationRunner {
     private final LibroRepository libroRepository;
     private final UsuarioRepository usuarioRepository;
 
-    public DatosInicialesH2(AutorRepository autorRepository,
+    public DatosIniciales(AutorRepository autorRepository,
             EditorialRepository editorialRepository,
             CategoriaRepository categoriaRepository,
             LibroRepository libroRepository,
